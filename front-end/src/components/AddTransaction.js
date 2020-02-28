@@ -8,7 +8,7 @@ export const AddTransaction = () => {
 			<h3>Add Transaction</h3>
 			<form>
 				<div className='form-control'>
-					<label for='text'>Description: </label>
+					<label htmlFor='text'>Description: </label>
 					<input
 						type='text'
 						value={text}
@@ -17,7 +17,7 @@ export const AddTransaction = () => {
 					/>
 				</div>
 				<div className='form-control'>
-					<label for='ammount'>Ammount:</label>
+					<label htmlFor='ammount'>Ammount:</label>
 					<input
 						type='number'
 						value={amount}
