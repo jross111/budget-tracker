@@ -1,7 +1,74 @@
+.App {
+	border: 3px solid black;
+	margin: 3px;
+	padding: 10px;
+}
+
+body {
+	background-color: #f7f7f7;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+
+.container {
+	margin: 30px auto;
+	width: 350px;
+}
+
 .plus {
 	color: green;
 }
 
 .minus {
 	color: red;
+}
+h1 {
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+.delete-btn {
+	cursor: pointer;
+	background-color: #e74c3c;
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	line-height: 20px;
+	padding: 2px 5px;
+	/* position: absolute; */
+	/* top: 50%; */
+	left: 0;
+	/* transform: translate(-100%, -50%); */
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+	opacity: 1;
+}
+
+.btn:focus,
+.delete-btn:focus {
+	outline: 0;
+}
+
+.list li {
+	list-style-type: none;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	/* color: #333; */
+	/* display: flex; */
+	justify-content: space-between;
+	position: relative;
+	padding: 10px 0;
+	margin: 10px 0;
+}
+
+ul {
+	padding-inline-start: 5px;
 }
