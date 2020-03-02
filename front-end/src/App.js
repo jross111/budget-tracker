@@ -13,8 +13,8 @@ function App() {
 	return (
 		<div className='App'>
 			<GlobalProvider>
-				<Header />
 				<div className='container'>
+					<Header />
 					<Balance />
 					<IncomeExpenses />
 					<TransactionList />

@@ -6,10 +6,16 @@ export const Transaction = ({ transaction }) => {
 
 	const sign = transaction.amount < 0 ? '-' : '+';
 	return (
-		<li className={transaction.amount < 0 ? 'minus' : 'plus'}>
+		<li
+			className={
+				transaction.amount < 0
+					? 'list-group-item list-group-item-danger'
+					: 'list-group-item list-group-item-success'
+			}
+		>
 			<button
 				onClick={() => deleteTransaction(transaction.id)}
-				className='delete-btn'
+				className='btn btn-outline-dark btn-sm'
 			>
 				X
 			</button>
