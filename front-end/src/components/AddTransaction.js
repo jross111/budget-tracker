@@ -43,18 +43,6 @@ export const AddTransaction = () => {
 				</div>
 				<button className='btn'>Add Transaction</button>
 			</form>
-
-			<div className='input-group mb-3'>
-				<div className='input-group-prepend'>
-					<span class='input-group-text'>$</span>
-					<span class='input-group-text'>0.00</span>
-				</div>
-				<input
-					type='text'
-					className='form-control'
-					aria-label='Dollar amount (with dot and two decimal places)'
-				/>
-			</div>
 		</div>
 	);
 };

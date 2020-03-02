@@ -4,7 +4,8 @@ import { GlobalContext } from '../context/GlobalState';
 export const IncomeExpenses = () => {
 	const { transactions } = useContext(GlobalContext);
 	const amounts = transactions.map((transaction) => transaction.amount);
-	const sign = transactions.amount < 0 ? '-' : '+';
+	// const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+	// const sign = transactions.amount < 0 ? '-' : '+';
 	// const incomes = amounts
 	// 	.filter((value) => value > 0)
 	// 	.reduce((acc, item) => (acc += item), 0)
@@ -24,18 +25,20 @@ export const IncomeExpenses = () => {
 	expenses = expenses.reduce((acc, item) => (acc += item), 0);
 
 	return (
-		<div className='inc-exp-container'>
-			<div>
-				<h4>Income</h4>
-				<p id='money-plus' className='money plus'>
-					{sign}${Math.abs(incomes)}
-				</p>
+		<div className='row align-items-center'>
+			<div className='col col-sm-3'>
+				<h4 className='card border'>
+					Income
+					<p id='money-plus' className='plus'>
+						${Math.abs(incomes)}
+					</p>
+				</h4>
 			</div>
-			<div>
-				<h4>Expense</h4>
-				<p id='money-minus' className='money minus'>
-					{sign}${Math.abs(expenses)}
-				</p>
+			<div className='col col-sm-3'>
+				<h4 className='card border'>
+					Expense
+					<p className='minus'>${Math.abs(expenses)}</p>
+				</h4>
 			</div>
 		</div>
 	);
