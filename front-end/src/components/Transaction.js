@@ -12,6 +12,7 @@ export const Transaction = ({ transaction }) => {
 					? 'list-group-item list-group-item-danger'
 					: 'list-group-item list-group-item-success'
 			}
+			row
 		>
 			<button
 				onClick={() => deleteTransaction(transaction.id)}

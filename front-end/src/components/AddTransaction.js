@@ -20,29 +20,62 @@ export const AddTransaction = () => {
 
 	return (
 		<div>
-			<h3>Add Transaction</h3>
+			<button
+				type='button'
+				className='btn-lg btn-primary'
+				data-toggle='modal'
+				data-target='#newTx'
+			>
+				New Transaction
+			</button>
 
-			<form onSubmit={onSubmit}>
-				<div className='form-control'>
-					<label htmlFor='text'>Description: </label>
-					<input
-						type='text'
-						value={text}
-						onChange={(e) => setText(e.target.value)}
-						placeholder='Enter Description...'
-					/>
+			<div
+				className='modal fade'
+				id='newTx'
+				tabindex='-1'
+				role='dialog'
+				aria-labelledby='exampleModalLabel'
+				aria-hidden='true'
+			>
+				<div className='modal-dialog' role='document'>
+					<div className='modal-content'>
+						<div className='modal-header'>
+							<form onSubmit={onSubmit}>
+								<div className='form-control'>
+									<label htmlFor='text'>Description: </label>
+									<input
+										type='text'
+										value={text}
+										onChange={(e) => setText(e.target.value)}
+										placeholder='Enter Description...'
+									/>
+								</div>
+								<div className='form-control'>
+									<label htmlFor='ammount'>Ammount:</label>
+									<input
+										type='number'
+										value={amount}
+										onChange={(e) => setAmount(e.target.value)}
+										placeholder='Amount'
+									/>
+								</div>
+								<div className='modal-footer'>
+									<button className='btn btn-success' type='button'>
+										Add Transaction
+									</button>
+									<button
+										type='button'
+										className='btn btn-secondary'
+										data-dismiss='modal'
+									>
+										Close
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
-				<div className='form-control'>
-					<label htmlFor='ammount'>Ammount:</label>
-					<input
-						type='number'
-						value={amount}
-						onChange={(e) => setAmount(e.target.value)}
-						placeholder='Enter Amount ...'
-					/>
-				</div>
-				<button className='btn'>Add Transaction</button>
-			</form>
+			</div>
 		</div>
 	);
 };
