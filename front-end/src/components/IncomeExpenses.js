@@ -26,7 +26,7 @@ export const IncomeExpenses = () => {
 
 	return (
 		<div className='row align-items-center'>
-			<div className='col col-sm-3'>
+			<div className='col'>
 				<h4 className='card border'>
 					Income
 					<p id='money-plus' className='plus'>
@@ -34,7 +34,7 @@ export const IncomeExpenses = () => {
 					</p>
 				</h4>
 			</div>
-			<div className='col col-sm-3'>
+			<div className='col'>
 				<h4 className='card border'>
 					Expense
 					<p className='minus'>${Math.abs(expenses)}</p>

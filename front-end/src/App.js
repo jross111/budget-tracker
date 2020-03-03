@@ -22,9 +22,8 @@ function App() {
 					<IncomeExpenses />
 
 					<AddTransaction />
-					<div className='row'>
-						<TransactionList />
-					</div>
+
+					<TransactionList />
 				</div>
 			</GlobalProvider>
 		</div>

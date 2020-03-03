@@ -12,18 +12,19 @@ export const Transaction = ({ transaction }) => {
 					? 'list-group-item list-group-item-danger'
 					: 'list-group-item list-group-item-success'
 			}
-			row
 		>
 			<button
 				onClick={() => deleteTransaction(transaction.id)}
-				className='btn btn-outline-dark btn-sm'
+				className='btn btn-sm pr-4 col-1'
 			>
 				X
 			</button>
-			{'  '}
-			{transaction.text}
-			{'              '}
-			<span>
+			<span className='col-1'>
+				{'  '}
+				{transaction.text}
+				{'              '}
+			</span>
+			<span className='col-2'>
 				{sign}${Math.abs(transaction.amount)}
 			</span>{' '}
 		</li>
