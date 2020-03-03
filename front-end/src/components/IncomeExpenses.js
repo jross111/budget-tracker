@@ -36,7 +36,7 @@ export const IncomeExpenses = () => {
 			</div>
 			<div className='col'>
 				<h4 className='card border'>
-					Expense
+					Expenses
 					<p className='minus'>${Math.abs(expenses)}</p>
 				</h4>
 			</div>

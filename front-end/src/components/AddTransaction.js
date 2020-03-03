@@ -6,6 +6,10 @@ export const AddTransaction = () => {
 	const [amount, setAmount] = useState(0);
 
 	const { addTransaction } = useContext(GlobalContext);
+	const clearState = () => {
+		setText('');
+		setAmount(0);
+	};
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -16,69 +20,37 @@ export const AddTransaction = () => {
 			amount: +amount,
 		};
 		addTransaction(newTransaction);
+		clearState();
 	};
 
 	return (
-		<div>
-			<button
-				type='button'
-				className='btn-lg btn-primary mt-5'
-				data-toggle='modal'
-				data-target='#newTx'
-			>
-				New Transaction
-			</button>
-
-			{/* Modal Popup */}
-			<div
-				className='modal fade'
-				id='newTx'
-				tabindex='-1'
-				role='dialog'
-				aria-labelledby='exampleModalCenterTitle'
-				aria-hidden='true'
-			>
-				<div className='modal-dialog' role='document'>
-					<div className='modal-content'>
-						<div className='modal-header '>
-							<form onSubmit={onSubmit} className='align'>
-								{/* <div className='form-control pt-3'> */}
-								{/* <label htmlFor='text'>Description: </label> */}
-								<input
-									type='text'
-									value={text}
-									className='row'
-									onChange={(e) => setText(e.target.value)}
-									placeholder='Enter Description...'
-								/>
-								{/* </div> */}
-								<div className='form-control'>
-									<label htmlFor='ammount'>Ammount:</label>
-									<input
-										type='number'
-										value={amount}
-										className='row'
-										onChange={(e) => setAmount(e.target.value)}
-										placeholder='Amount'
-									/>
-								</div>
-								{/* <div className='modal-footer'> */}
-								<button className='btn btn-success' type='button'>
-									Add Transaction
-								</button>
-								<button
-									type='button'
-									className='btn btn-secondary'
-									data-dismiss='modal'
-								>
-									Close
-								</button>
-								{/* </div> */}
-							</form>
-						</div>
+		<div className='container border'>
+			<form onSubmit={onSubmit}>
+				<fieldset className='form-group'>
+					<h5>New Transaction</h5>
+					<div clasName='form-group'>
+						<label htmlFor='description'>description</label>
+						<input
+							type='text'
+							value={text}
+							onChange={(e) => setText(e.target.value)}
+							placeholder='Enter text...'
+							className='form-control'
+						/>
 					</div>
-				</div>
-			</div>
+
+					<label htmlFor='amount'>amount</label>
+					<input
+						type='number'
+						value={amount}
+						onChange={(e) => setAmount(e.target.value)}
+						placeholder='amount'
+						className='form-control'
+					/>
+				</fieldset>
+
+				<button className='btn btn-success mb-3'>Add transaction</button>
+			</form>
 		</div>
 	);
 };
