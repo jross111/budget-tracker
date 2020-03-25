@@ -12,7 +12,7 @@
 	justify-content: center;
 	min-height: 100vh;
 	margin: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif; 
 } */
 
 /* .container {
@@ -21,11 +21,11 @@
 } */
 
 .plus {
-	color: green;
+	color: #60b24e;
 }
 
 .minus {
-	color: red;
+	color: #f43d3d;
 }
 h1 {
 	letter-spacing: 1px;
