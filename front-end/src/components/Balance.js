@@ -8,7 +8,9 @@ export const Balance = () => {
 
 	return (
 		<div>
-			<h2 className={total < 0 ? 'minus' : 'plus'}>{total}</h2>
+			<h2>
+				$<span className={total < 0 ? 'minus' : 'plus'}>{total}</span>
+			</h2>
 		</div>
 	);
 };
